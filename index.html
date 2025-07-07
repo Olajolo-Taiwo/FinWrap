@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinnWrap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>[x-cloak] {display: none !important;}</style>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+  </head>
+
+  <body class="text-gray-800 font-sans">
+    <!-- HEADER -->
+    <header class="flex items-center justify-between p-4 max-w-6xl mx-auto">
+      <h1 class="text-2xl font-bold text-[#4b0082] animate-fade-in-up">
+        <span class="text-blue-600">F</span>innWrap
+      </h1>
+
+      <!-- DESKTOP MENU -->
+      <nav class="hidden md:flex space-x-6 items-center text-sm font-medium">
+        <a href="#" class="hover:text-purple-600">Home</a>
+        <a href="#" class="hover:text-purple-600">Features</a>
+        <a href="#" class="hover:text-purple-600">Pricing</a>
+        <a href="#" class="hover:text-purple-600">Blog</a>
+
+        <!-- RESOURCES DROPDOWN -->
+        <div class="relative group">
+          <button class="hover:text-purple-600 flex items-center space-x-1">
+            <span>Resources</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="absolute hidden group-hover:block bg-white shadow-md rounded mt-2 p-2 space-y-1 text-gray-700">
+            <a href="#" class="block hover:text-purple-600">Docs</a>
+            <a href="#" class="block hover:text-purple-600">Tutorials</a>
+            <a href="#" class="block hover:text-purple-600">Support</a>
+          </div>
+        </div>
+
+        <a href="#" class="ml-4 px-4 py-2 bg-black text-white rounded-full hover:scale-105 transition">Sign In</a>
+      </nav>
+
+      <!-- MOBILE MENU -->
+      <div class="md:hidden">
+        <button @click="open = !open" x-data="{ open: false }" class="focus:outline-none relative z-50">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" /></svg>
+
+          <!-- MOBILE SIDEBAR -->
+          <div x-show="open" x-cloak class="absolute top-12 right-0 w-48 bg-white shadow-md rounded p-4 space-y-3">
+            <a href="#" class="block text-gray-800 hover:text-purple-600">Home</a>
+            <a href="#" class="block text-gray-800 hover:text-purple-600">Features</a>
+            <a href="#" class="block text-gray-800 hover:text-purple-600">Pricing</a>
+            <a href="#" class="block text-gray-800 hover:text-purple-600">Blog</a>
+            <div class="border-t pt-2">
+              <p class="text-sm font-semibold text-gray-600">Resources</p>
+              <a href="#" class="block text-sm pl-2 text-gray-700 hover:text-purple-600">Docs</a>
+              <a href="#" class="block text-sm pl-2 text-gray-700 hover:text-purple-600">Tutorials</a>
+              <a href="#" class="block text-sm pl-2 text-gray-700 hover:text-purple-600">Support</a>
+            </div>
+            <a href="#" class="block px-4 py-2 text-center bg-black text-white rounded-full">Sign In</a>
+          </div>
+        </button>
+      </div>
+    </header>
+
+<!-- MAIN CONTENT -->
+    <main class=" p-4 max-w-xl mx-auto space-y-10">
+      <div class="fade-in-up delay-100">
+        <div class="inline-flex items-center space-x-2 bg-white px-4 py-1 rounded-full shadow text-sm mb-4">
+          <span class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-2 py-0.5 rounded-full text-xs">New</span>
+          <span class="text-gray-600">Comprehensive AI Guide</span>
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight mb-4">
+          Take Control of<br />
+          Your Spending <span class="text-fuchsia-500">Experience</span>
+        </h2>
+
+        <p class="text-gray-600 mb-6">
+          FinnWrap gives you a unified view of your <span class="whitespace-nowrap">spending,</span> subscriptions, and financial health with
+          <a href="#" class="text-purple-700 underline">full control.</a>
+        </p>
+
+          <button class="bg-black text-white px-6 py-3 rounded-xl font-semibold shadow hover:scale-105 transition">
+            Start For Free
+          </button>
+      </div>
+
+      <!-- USER COUNT-->
+      <section class="text-center fade-in-up delay-200">
+        <p class="text-gray-600 text-sm mb-4">12,229 users joined last month</p>
+
+        <!-- AVATARS -->
+        <div class="flex justify-center -space-x-4 mb-6">
+          <img src="asset/avatar1.avif" class="w-50 h-10 rounded-full border-2 border-white animate-bounce" />
+        </div>
+
+        <!-- FOLDER BG-->
+        <div class="flex justify-center">
+          <img
+            src="asset/img.jpeg"
+            alt="Folder"
+            class="w-64 md:w-80 rounded-xl shadow-lg hover:scale-105 transition duration-500"
+          />
+        </div>
+      </section>
+    </main>
+    <footer class="flex justify-center text-gray-600 font-sm mt-4">finnwrap@2025</footer>
+  </body>
+  <script src="script.js"></script>
+</html>
